@@ -20,6 +20,7 @@ import TransitionComponents from '@/components/TransitionComponents'
 import Directives from '@/components/Directives'
 import Bus from '@/components/Bus'
 import RouterWithTarget_blank from '@/components/RouterWithTarget_blank'
+import myComponentWarp from '@/components/myComponentWarp'
 
 
 Vue.use(Router)
@@ -98,14 +99,18 @@ export default new Router({
       path: '/directives',
       name: 'Directives',
       component: Directives
-    },{
+    }, {
       path: '/bus',
       name: 'Bus',
       component: Bus
-    },{
+    }, {
       path: '/routerWithTarget_blank',
       name: 'RouterWithTarget_blank',
       component: RouterWithTarget_blank
+    }, {
+      path: '/myComponentWarp',
+      name: 'myComponentWarp',
+      component: myComponentWarp
     }
   ]
 })
