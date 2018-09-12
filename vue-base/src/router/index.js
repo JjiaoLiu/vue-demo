@@ -21,6 +21,7 @@ import Directives from '@/components/Directives'
 import Bus from '@/components/Bus'
 import RouterWithTarget_blank from '@/components/RouterWithTarget_blank'
 import myComponentWarp from '@/components/myComponentWarp'
+import tree from '@/components/tree'
 
 
 Vue.use(Router)
@@ -111,6 +112,10 @@ export default new Router({
       path: '/myComponentWarp',
       name: 'myComponentWarp',
       component: myComponentWarp
+    }, {
+      path: '/tree',
+      name: 'tree',
+      component: tree
     }
   ]
 })
