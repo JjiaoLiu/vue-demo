@@ -13,13 +13,10 @@
   export default {
     name: 'App',
     created() {
-      console.log(1)
     },
     watch: {
       $route: {
         handler(newV, oldV) {
-          console.log(oldV)
-          console.log(newV)
         },
         deep: true,
         immediate: true

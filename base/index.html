@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var code = 123222;
+    var pattern = '{"code":' + code + ',"regin":"[\u4e00-\u9fa5]+"}';
+    var reg = new RegExp(pattern);
+    var str = '{"code":123222,"regin":"汉字"}';
+    var result = reg.exec(str)
+    console.log(JSON.parse(result[0]))
+</script>
+</body>
+</html>

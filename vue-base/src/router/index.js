@@ -22,6 +22,7 @@ import Bus from '@/components/Bus'
 import RouterWithTarget_blank from '@/components/RouterWithTarget_blank'
 import myComponentWarp from '@/components/myComponentWarp'
 import tree from '@/components/tree'
+import dongtaiForm from '@/components/dongtaiForm'
 
 
 Vue.use(Router)
@@ -116,6 +117,10 @@ export default new Router({
       path: '/tree',
       name: 'tree',
       component: tree
+    }, {
+      path: '/dongtaiForm',
+      name: 'dongtaiForm',
+      component: dongtaiForm
     }
   ]
 })
