@@ -23,6 +23,7 @@ import RouterWithTarget_blank from '@/components/RouterWithTarget_blank'
 import myComponentWarp from '@/components/myComponentWarp'
 import tree from '@/components/tree'
 import dongtaiForm from '@/components/dongtaiForm'
+import filterCom from '@/components/filterCom'
 
 
 Vue.use(Router)
@@ -121,6 +122,10 @@ export default new Router({
       path: '/dongtaiForm',
       name: 'dongtaiForm',
       component: dongtaiForm
+    }, {
+      path: '/filterCom',
+      name: 'filterCom',
+      component: filterCom
     }
   ]
 })
