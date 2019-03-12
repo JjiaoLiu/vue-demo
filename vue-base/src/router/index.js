@@ -19,12 +19,12 @@ import TreeFolderWarp from '@/components/TreeFolderWarp'
 import TransitionComponents from '@/components/TransitionComponents'
 import Directives from '@/components/Directives'
 import Bus from '@/components/Bus'
-import RouterWithTarget_blank from '@/components/RouterWithTarget_blank'
+// import RouterWithTarget_blank from '@/components/RouterWithTarget_blank'
 import myComponentWarp from '@/components/myComponentWarp'
 import tree from '@/components/tree'
 import dongtaiForm from '@/components/dongtaiForm'
 import filterCom from '@/components/filterCom'
-
+import ActiveAttributeName from '@/components/ActiveAttributeName'
 
 Vue.use(Router)
 
@@ -106,11 +106,13 @@ export default new Router({
       path: '/bus',
       name: 'Bus',
       component: Bus
-    }, {
-      path: '/routerWithTarget_blank',
-      name: 'RouterWithTarget_blank',
-      component: RouterWithTarget_blank
-    }, {
+    },
+    // {
+    // path: '/routerWithTarget_blank',
+    // name: 'RouterWithTarget_blank',
+    // component: RouterWithTarget_blank
+    // },
+    {
       path: '/myComponentWarp',
       name: 'myComponentWarp',
       component: myComponentWarp
@@ -126,7 +128,10 @@ export default new Router({
       path: '/filterCom',
       name: 'filterCom',
       component: filterCom
+    }, {
+      path: '/ActiveAttributeName',
+      name: 'ActiveAttributeName',
+      component: ActiveAttributeName
     }
   ]
 })
-

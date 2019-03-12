@@ -8,22 +8,22 @@
 <script>
 
   export default {
-    name: "ActiveComponent",
-    components:{
+    name: 'ActiveComponent',
+    components: {
       'views1': {
-        template:'<div>views1</div>'
+        template: '<div>views1</div>'
       },
       'views2': {
-        template:'<div>views2</div>'
+        template: '<div>views2</div>'
       },
     },
-    data(){
-      return{
-        currentView:'views1'
+    data () {
+      return {
+        currentView: 'views1'
       }
     },
-    methods:{
-      changeComponent(){
+    methods: {
+      changeComponent () {
         this.currentView = 'views2'
       }
     }

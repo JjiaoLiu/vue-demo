@@ -6,12 +6,15 @@ import router from './router'
 import directives from './directives'
 import 'normalize.css'
 import './assets/mixin/nav-bar.scss'
+
 Vue.use(directives)
 Vue.config.productionTip = false
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import BotUI from 'botui'
 
 Vue.use(ElementUI)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
