@@ -1,17 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="jquery.waterwheelCarousel.js"></script>
+  <style>
+    html {
+      font-size: 10px;
+    }
+
+    #carousel {
+      height: 15.3rem;
+    }
+
+    @media (min-width: 450px) {
+      html {
+        font-size: 12px;
+      }
+    }
+
+    @media (min-width: 525px) {
+      html {
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 600px) {
+      html {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 675px) {
+      html {
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 750px) {
+      html {
+        font-size: 20px;
+      }
+
+    }
+  </style>
 </head>
 <body>
+<div class="carousel" id="carousel">
+  <img src="./image/s2-banner3-mb-ac-2.0.png"
+       light-img="image/s2-banner-mb-2.0.jpeg"
+       dark-img="./image/s2-banner3-mb-ac-2.0.png"
+       class="">
+  <img src="./image/s2-banner2-mb-ac-2.0.png"
+       light-img="image/s2-banner-mb-2.0.jpeg"
+       dark-img="./image/s2-banner2-mb-ac-2.0.png"
+       class="">
+  <img src="./image/s2-banner1-mb-ac-2.0.png"
+       light-img="image/s2-banner-mb-2.0.jpeg"
+       dark-img="./image/s2-banner1-mb-ac-2.0.png"
+       class="">
+</div>
 <script>
-    var code = 123222;
-    var pattern = '{"code":' + code + ',"regin":"[\u4e00-\u9fa5]+"}';
-    var reg = new RegExp(pattern);
-    var str = '{"code":123222,"regin":"汉字"}';
-    var result = reg.exec(str)
-    console.log(JSON.parse(result[0]))
+	var carousel = $("#carousel").waterwheelCarousel({
+		// include options like this:
+		// (use quotes only for string values, and no trailing comma after last option)
+		// option: value,
+		// option: value
+		movedToCenter: function ($newCenterItem) {
+			var imageNow = $newCenterItem.attr('light-img');
+			$newCenterItem.attr('src', imageNow)
+		},
+		movingFromCenter: function (currentCenterItem) {
+			var imageNow = currentCenterItem.attr('dark-img');
+			currentCenterItem.attr('src', imageNow)
+		}
+	});
+	$(window).on('resize', function () {
+		carousel.reload()
+	})
+	var code = 123222;
+	var pattern = '{"code":' + code + ',"regin":"[\u4e00-\u9fa5]+"}';
+	var reg = new RegExp(pattern);
+	var str = '{"code":123222,"regin":"汉字"}';
+	var result = reg.exec(str)
+	console.log(JSON.parse(result[0]))
 </script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="10px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="10px"]::before {
+  content: '10px';
+  font-size: 10px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="20px"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="20px"]::before {
+  content: '20px';
+  font-size: 20px;
+}
+
+//默认的样式
+.ql-snow .ql-picker.ql-size .ql-picker-label::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+  content: '14px';
+  font-size: 14px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="0.26rem"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="0.26rem"]::before {
+  content: '10px';
+  font-size: 10px;
+}
