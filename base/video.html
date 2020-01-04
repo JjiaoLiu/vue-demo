@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+  <script
+    src="https://media-cache.huaweicloud.com/video/hwplayer/0.0.6/lib/video-js-5.20.5/ie8/videojs-ie8.min.js?ttl=1866446853"></script>
+  <![endif]-->
+  <script src="https://media-cache.huaweicloud.com/video/hwplayer/0.0.6/dist/hwplayer.js?ttl=1866446853"></script>
+
+</head>
+<body>
+<video id="player" class="video-js vjs-default-skin vjs-big-play-centered"></video>
+
+<script>
+
+	// hwplayerloaded(function () {
+	// 	var player = new HWPlayer("test",{
+	// 		width: 800,
+	// 		height: 500,
+	// 		controls: false,
+	// 		muted:true,
+	// 		autoplay:true
+	// 	},function(){
+	// 		//播放器加载完成执行的逻辑
+	// 		playerBegin()
+	//
+	// 	});
+	// 	player.src({
+	// 		src: "https://936.cdn-vod.huaweicloud.com/asset/6ebd3414d7d818e28c0fa4ca6776f091/play_video/90cb69242c6f7dc6f6027eba78556be4_H.264_854X480_HEAACV1_900.mp4",
+	// 		type: "video/mp4"
+	// 	});
+	// 	function playerBegin() {
+	// 		player.play()
+	// 	}
+	// });play
+
+	var deviceType;
+	var hwPlayer;
+
+	hwplayerloaded(function () {
+		hwPlayer = new HWPlayer("player", {
+			poster: "https://936.cdn-vod.huaweicloud.com/asset/6ebd3414d7d818e28c0fa4ca6776f091/cover/Cover0.jpg",
+			controls: false,
+			autoplay: true,
+			muted: true
+		}, function () {
+			setPlayerSize();
+			playerBegin()
+		});
+		hwPlayer.src({
+			src: "https://936.cdn-vod.huaweicloud.com/asset/6ebd3414d7d818e28c0fa4ca6776f091/play_video/90cb69242c6f7dc6f6027eba78556be4_H.264_854X480_HEAACV1_900.mp4",
+			type: "video/mp4"
+		});
+		hwPlayer.on("play", function () {
+			if (deviceType === 'mobile') {
+				// gtag('event', 'click', {'event_label': 'video play mobile'}); //1
+			} else {
+				// gtag('event', 'click', {'event_label': 'video play pc'}); //2
+			}
+		});
+		hwPlayer.on('resize', function () {
+			setPlayerSize()
+		})
+
+		function playerBegin() {
+			hwPlayer.play()
+		}
+	});
+
+	// 顶部视频
+	function setPlayerSize() {
+		var screenW = $('body').width();
+		var videoHeight = (screenW * 480) / 854;
+		hwPlayer.height(videoHeight)
+		$("#player video").height(videoHeight);
+	}
+
+
+</script>
+</body>
+</html>
